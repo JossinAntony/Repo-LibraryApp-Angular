@@ -12,4 +12,10 @@ export class ApiService {
     return this.http.get('http://libraryapp-ict.herokuapp.com/retrieveBooksAPI');
   }
 
+  retrieveAuthors(){
+    return this.http.get('http://libraryapp-ict.herokuapp.com/retrieveAuthorsAPI');
+  }
+
+
+  
 }

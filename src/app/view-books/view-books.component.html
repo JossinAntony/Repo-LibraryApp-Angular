@@ -42,20 +42,20 @@
           
           <!--/stories-->
 
-          <!-- <% for(var i=0; i < library.length; i++){ %>
+          <tr *ngFor="let data of Books">
             <div class="row">    
               <br>
               <div class="col-md-2 col-sm-3 text-center">
-                <a class="story-title" href="#"><img alt="" src="<%= library[i].src %>" style="width:100px;height:150px" class=""></a>
+                <a class="story-title" href="#"><img alt="" src="{{data.src}}" style="width:100px;height:150px" class=""></a>
               </div>
               <div class="col-md-10 col-sm-9">
-                <h3><%= library[i].Title %></h3>
+                <h3>{{data.Title}}</h3>
                 <div class="row">
-                  <div class="col-xs-9">
-                    <h4><span class="label label-default"><%= library[i].Author %></span></h4><h4>
-                    <small style="font-family:courier,'new courier';" class="text-muted"><%= library[i].Publisher %> • <a href="#" class="text-muted"><%= library[i].Year %></a></small>
+                  <div class="col-sm-12">
+                    <h4><span class="label label-default">{{data.Author}}</span></h4><h4>
+                    <small style="font-family:courier,'new courier';" class="text-muted">{{data.Publisher}} • <a href="#" class="text-muted">{{data.Year}}</a></small>
                     </h4>
-                    <a href="/retrieveSingleBook/<%= library[i]._id %>" class="btn btn-success" >Read more</a>
+                    <a href="/retrieveSingleBook/{{data_id}}" class="btn btn-success" >Read more</a>
                   </div>
                   <div class="col-xs-3"></div>
                 </div>
@@ -63,9 +63,9 @@
               </div>
             </div>
             <hr>
-          <% } %> -->
+          </tr>
         
-          <div class="row">    
+          <!-- <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
               <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/women/56.jpg" style="width:100px;height:100px" class="img-circle"></a>
@@ -140,7 +140,7 @@
             </div>
           </div>
           <hr>
-          
+           -->
           <!--/stories-->
           
           
