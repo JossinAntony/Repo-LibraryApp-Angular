@@ -1,3 +1,113 @@
-<p>
-  add-authors works!
-</p>
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>title
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12 col-sm-2"></div>
+    <div class="col col-12 col-sm-8 border border-secondary rounded">
+      <br><br><br>
+      <h1 class='text-center'>Add Authors</h1>
+      <br><br>
+      <form (ngSubmit)=onSubmit(f) #f='ngForm'>
+        <table class="table table-borderless">
+          <tr>
+            <td><h5 class="text-center">Name:</h5></td>
+            <td> <input type="text" class="form-control" name="name" ngModel> </td>
+          </tr>
+          <tr>
+            <td><h5 class="text-center">Date of Birth:</h5></td>
+            <td> <input type="text" class="form-control" name="dob" ngModel> </td>
+          </tr>
+          <tr>
+          <td><h5 class="text-center">Country:</h5></td>
+          <td> <input type="text" class="form-control" name="country" ngModel> </td>
+          </tr>
+          <tr>
+            <td><h5 class="text-center">Other works:</h5></td>
+            <td> <input type="text" class="form-control" name="otherworks" ngModel> </td>
+          </tr>
+          <tr>
+            <td><h5 class="text-center">Imgsrc:</h5></td>
+            <td> <input type="text" class="form-control" name="src" ngModel> </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td> <button class="btn btn-info" type="submit" ngSubmit>SUBMIT</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div class="col col-12 col-sm-2"></div>
+  </div>
+
+
+  <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+
+                                                  
+                                                                                  
+  <hr>
+
+  <div class="container" id="footer">
+    <div class="row">
+      <div class="col col-sm-12">
+        
+        <h1>Follow Us</h1>
+        <div class="btn-group">
+        <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+      <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+      <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+        </div>
+        
+      </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>

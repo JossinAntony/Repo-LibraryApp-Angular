@@ -16,6 +16,10 @@ export class ApiService {
     return this.http.get('http://libraryapp-ict.herokuapp.com/retrieveAuthorsAPI');
   }
 
+  saveAuthors(data){
+    return this.http.post('http://libraryapp-ict.herokuapp.com/saveAuthorsAPI',data);
+  }
+
 
   
 }
