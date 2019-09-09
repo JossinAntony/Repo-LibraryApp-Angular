@@ -12,13 +12,18 @@ import { ViewAuthorsComponent } from './view-authors/view-authors.component';
 import { AddBooksComponent } from './add-books/add-books.component';
 import { AddAuthorsComponent } from './add-authors/add-authors.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { SinglebookComponent } from './singlebook/singlebook.component';
+
 
 
 const appRoutes:Routes=[
   {path:'',component:ViewBooksComponent},
   {path:'viewAuthors',component:ViewAuthorsComponent},
   {path:'addBook',component:AddBooksComponent},
-  {path:'addAuthor',component:AddAuthorsComponent}
+  {path:'addAuthor',component:AddAuthorsComponent},
+  {path:'login',component:LoginComponent},
+  {path:'singlebook',component:SinglebookComponent}
 ]
 
 @NgModule({
@@ -28,7 +33,9 @@ const appRoutes:Routes=[
     ViewAuthorsComponent,
     AddBooksComponent,
     AddAuthorsComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    SinglebookComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,6 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent,NavbarComponent]
+  bootstrap: [AppComponent,NavbarComponent,LoginComponent]
 })
 export class AppModule { }
