@@ -30,10 +30,6 @@ export class ApiService {
     return this.http.post('http://libraryapp-express.herokuapp.com/saveBooksAPI',data);
   }
 
-  login(data){
-    return this.http.get('http://libraryapp-express.herokuapp.com/saveBooksAPI',data);
-  }
-
   retrieveBook(id) {
     return this.http.get('https://libraryapp-express.herokuapp.com/retrieveSingleBookAPI/?q=' + id);
   }

@@ -11,13 +11,15 @@ export class SinglebookComponent implements OnInit {
   constructor(private apiservice: ApiService) { }
 
   id = '';
+  book = {};
 
   ngOnInit() {
     // this.status = JSON.parse(localStorage.getItem('id'));
     this.id = (localStorage.getItem('id'));
     // console.log(localStorage.getItem('id'));
     this.apiservice.retrieveBook(this.id).subscribe((response : Array <object>) => {
-      console.log(response);
+      // console.log(response);
+      this.book = response[0];
     });
   }
 
