@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 import {ApiService} from '../api.service';
 import {FormsModule, NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,12 +10,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private apiservice: ApiService) { }
 
   ngOnInit() {
   }
 
-  logIn() {
-    this.router.navigateByUrl('books');
-  }
+onSubmit(data: NgForm) {
+  this.apiservice.checkLogIn(data.value).subscribe((response: {Array<>}) => {
+    if (response.message === "access"){
+      this.router.navigateByUrl('books');
+    }else {
+      alert('incorrect username or password !');
+    }
+  });
+}
 }

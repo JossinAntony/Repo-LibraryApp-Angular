@@ -34,4 +34,8 @@ export class ApiService {
     return this.http.get('https://libraryapp-express.herokuapp.com/retrieveSingleBookAPI/?q=' + id);
   }
 
+  checkLogIn(data){
+    return this.http.get('https://libraryapp-express.herokuapp.com/searchLogInCredentialsAPI/?username=' + data.uname + '&pwd=' + data.upass);
+  }
+
 }
