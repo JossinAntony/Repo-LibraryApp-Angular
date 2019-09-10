@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
 import {FormsModule, NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-books',
@@ -10,9 +11,13 @@ import {FormsModule, NgForm} from '@angular/forms';
 export class AddBooksComponent implements OnInit {
 
 
-  constructor(private apiservice:ApiService) { }
+  constructor(private apiservice:ApiService, private router: Router) { }
 
   ngOnInit() {
+    status=localStorage.getItem('logStatus');
+    if(status != "ok"){
+      this.router.navigateByUrl('');
+    }
   }
 
     onSubmit(data:NgForm){

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-singlebook',
@@ -8,20 +9,24 @@ import { ApiService } from '../api.service';
 })
 export class SinglebookComponent implements OnInit {
 
-  constructor(private apiservice: ApiService) { }
+  constructor(private apiservice: ApiService, private router: Router) { }
 
   id = '';
   book = {};
 
   ngOnInit() {
-    // this.status = JSON.parse(localStorage.getItem('id'));
+    status=localStorage.getItem('logStatus');
+    if(status != "ok"){
+      this.router.navigateByUrl('');
+    }else {
+          // this.status = JSON.parse(localStorage.getItem('id'));
     this.id = (localStorage.getItem('id'));
     // console.log(localStorage.getItem('id'));
     this.apiservice.retrieveBook(this.id).subscribe((response : Array <object>) => {
       // console.log(response);
       this.book = response[0];
     });
+    }
   }
-
 }
 

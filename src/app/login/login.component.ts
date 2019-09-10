@@ -19,9 +19,24 @@ onSubmit(data: NgForm) {
   this.apiservice.checkLogIn(data.value).subscribe((response: {Array<>}) => {
     if (response.message === "access"){
       this.router.navigateByUrl('books');
+      localStorage.setItem('logStatus','ok');
     }else {
       alert('incorrect username or password !');
     }
   });
 }
 }
+
+// ngOnInit() {
+//   status=JSON.parse(localStorage.getItem('loggedIn'));
+//   console.log('in welcome page ' + status);
+//   if(status === "null"){
+//     console.log('');
+//     this.router.navigateByUrl('');
+//   }
+// }
+
+// logOut(){
+//   localStorage.removeItem('loggedIn');
+//   this.router.navigateByUrl('');
+// }

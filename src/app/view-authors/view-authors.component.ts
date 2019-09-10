@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-authors',
@@ -9,10 +10,15 @@ import {ApiService} from '../api.service';
 export class ViewAuthorsComponent implements OnInit {
   Authors :Array<object>;
 
-  constructor(private apiservice:ApiService) { }
+  constructor(private apiservice:ApiService, private router: Router) { }
 
   ngOnInit() {
-    this.fetchAuthors();
+    status=localStorage.getItem('logStatus');
+    if(status != "ok"){
+      this.router.navigateByUrl('');
+    }else {
+      this.fetchAuthors();
+    }
   }
 
 

@@ -15,9 +15,12 @@ export class ViewBooksComponent implements OnInit {
 
 
   ngOnInit() {
-
-    this.fetchBooks();
-
+    status=localStorage.getItem('logStatus');
+    if(status != "ok"){
+      this.router.navigateByUrl('');
+    }else {
+      this.fetchBooks();
+    }
   }
 
   public fetchBooks(){
@@ -28,7 +31,6 @@ export class ViewBooksComponent implements OnInit {
 
   public retrieveSingleBook(data_id: string) {
     localStorage.setItem('id', data_id);
-    console.log(data_id);
     this.router.navigateByUrl('singlebook');
   }
 
