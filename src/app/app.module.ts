@@ -18,11 +18,11 @@ import { SinglebookComponent } from './singlebook/singlebook.component';
 
 
 const appRoutes:Routes=[
-  {path:'',component:ViewBooksComponent},
+  {path:'books',component:ViewBooksComponent},
   {path:'viewAuthors',component:ViewAuthorsComponent},
   {path:'addBook',component:AddBooksComponent},
   {path:'addAuthor',component:AddAuthorsComponent},
-  {path:'login',component:LoginComponent},
+  {path:'',component:LoginComponent},
   {path:'singlebook',component:SinglebookComponent}
 ]
 
@@ -35,7 +35,8 @@ const appRoutes:Routes=[
     AddAuthorsComponent,
     NavbarComponent,
     LoginComponent,
-    SinglebookComponent
+    SinglebookComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,6 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent,NavbarComponent,LoginComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
