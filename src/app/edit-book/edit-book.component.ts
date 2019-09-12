@@ -39,10 +39,13 @@ export class EditBookComponent implements OnInit {
     });
   }
 
-  // delete(){
-  //   this.apiservice.deleteStudent(this.studentData[0]).subscribe((response:Array<object>)=>{
-  //     alert("Entry deleted!")
-  //   })
+  delete(){
+    this.apiservice.deleteBook(this.book[0]).subscribe((response: Message) => {
+      if (response.message === "delete ok") {
+        alert('Book deletedd !');
+      }else {
+        alert('delete unsuccessful, please try again!');
+      }
+    });
   }
-
 }

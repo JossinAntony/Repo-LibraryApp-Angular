@@ -43,6 +43,8 @@ export class ApiService {
     return this.http.post('https://libraryapp-express.herokuapp.com/updateBooksAPI/' + id, data);
   }
 
+  deleteBook(data) {
+    return this.http.post('https://libraryapp-express.herokuapp.com/deleteBookAPI', data);
+  }
 
 }
-
