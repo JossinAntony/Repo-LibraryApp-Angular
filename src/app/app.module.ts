@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { SinglebookComponent } from './singlebook/singlebook.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { SingleauthorComponent } from './singleauthor/singleauthor.component';
+import { EditAuthorComponent } from './edit-author/edit-author.component';
 
 
 
@@ -27,7 +28,8 @@ const appRoutes:Routes=[
   {path:'',component:LoginComponent},
   {path:'singlebook',component:SinglebookComponent},
   {path:'editBook',component:EditBookComponent},
-  {path:'singleauthor',component:SingleauthorComponent}
+  {path:'singleauthor',component:SingleauthorComponent},
+  {path:'editAuthor',component:EditAuthorComponent},
 ]
 
 @NgModule({
@@ -42,6 +44,7 @@ const appRoutes:Routes=[
     SinglebookComponent,
     EditBookComponent,
     SingleauthorComponent,
+    EditAuthorComponent,
 
   ],
   imports: [

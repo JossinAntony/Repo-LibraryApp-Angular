@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { Message } from '../message.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,11 +12,15 @@ import { Message } from '../message.model';
 })
 export class EditBookComponent implements OnInit {
 
-  constructor(private apiservice: ApiService) { }
+  constructor(private apiservice: ApiService, private router: Router) { }
 
   book = [];
   status = false;
   ngOnInit() {
+    status=localStorage.getItem('logStatus');
+    if(status != "ok"){
+      this.router.navigateByUrl('');
+    }
   }
 
   onSubmit(data: NgForm) {

@@ -39,7 +39,7 @@ export class ApiService {
   }
 
   updateBook(data){
-    var id = data._id;
+    let id = data._id;
     return this.http.post('https://libraryapp-express.herokuapp.com/updateBooksAPI/' + id, data);
   }
 
@@ -49,6 +49,15 @@ export class ApiService {
 
   retrieveAuthor(authorId) {
     return this.http.get('https://libraryapp-express.herokuapp.com/retrieveSingleAuthorAPI/?q=' + authorId);
+  }
+
+  searchAuthor(data){
+    return this.http.get('https://libraryapp-express.herokuapp.com/searchAuthorsAPI/?q=' + data);
+  }
+
+  updateAuthor(data){
+    let id = data._id;
+    return this.http.post('https://libraryapp-express.herokuapp.com/updateAuthorsAPI/' + id, data);
   }
 
 }
