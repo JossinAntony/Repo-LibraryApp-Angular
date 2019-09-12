@@ -12,7 +12,7 @@ export class SinglebookComponent implements OnInit {
   constructor(private apiservice: ApiService, private router: Router) { }
 
   id = '';
-  book = {};
+  book : any;
 
   ngOnInit() {
     status=localStorage.getItem('logStatus');
@@ -22,7 +22,7 @@ export class SinglebookComponent implements OnInit {
           // this.status = JSON.parse(localStorage.getItem('id'));
     this.id = (localStorage.getItem('id'));
     // console.log(localStorage.getItem('id'));
-    this.apiservice.retrieveBook(this.id).subscribe((response : Array <object>) => {
+    this.apiservice.retrieveBook(this.id).subscribe((response : Array <Object>) => {
       // console.log(response);
       this.book = response[0];
     });

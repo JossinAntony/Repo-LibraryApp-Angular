@@ -12,8 +12,9 @@ export class SingleauthorComponent implements OnInit {
   constructor(private apiservice: ApiService, private router: Router) { }
 
   authorId = '';
-  author = {};
+  author : any;
 
+  Title = '';
   ngOnInit() {
     status=localStorage.getItem('logStatus');
     if(status != "ok"){
@@ -21,7 +22,7 @@ export class SingleauthorComponent implements OnInit {
     }else {
 
     this.authorId = (localStorage.getItem('authorId'));
-    this.apiservice.retrieveAuthor(this.authorId).subscribe((response : Array <object>) => {
+    this.apiservice.retrieveAuthor(this.authorId).subscribe((response: Array <object>) => {
     this.author = response[0];
     });
     }

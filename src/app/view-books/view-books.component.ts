@@ -11,7 +11,7 @@ export class ViewBooksComponent implements OnInit {
 
   constructor(private apiservice:ApiService, private router:Router) { }
 
-  Books : Array<object>;
+  Books : any;
 
 
   ngOnInit() {

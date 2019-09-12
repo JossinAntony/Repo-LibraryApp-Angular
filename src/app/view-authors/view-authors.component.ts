@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./view-authors.component.css']
 })
 export class ViewAuthorsComponent implements OnInit {
-  Authors :Array<object>;
+  Authors : any;
 
   constructor(private apiservice:ApiService, private router: Router) { }
 
