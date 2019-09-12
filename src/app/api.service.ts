@@ -26,10 +26,6 @@ export class ApiService {
     return this.http.post('http://libraryapp-express.herokuapp.com/saveBooksAPI',data);
   }
 
-  login(data){
-    return this.http.post('http://libraryapp-express.herokuapp.com/saveBooksAPI',data);
-  }
-
   retrieveBook(id) {
     return this.http.get('https://libraryapp-express.herokuapp.com/retrieveSingleBookAPI/?q=' + id);
   }
@@ -38,4 +34,9 @@ export class ApiService {
     return this.http.get('https://libraryapp-express.herokuapp.com/searchLogInCredentialsAPI/?username=' + data.uname + '&pwd=' + data.upass);
   }
 
+  searchBook(data){
+    return this.http.get('https://libraryapp-express.herokuapp.com/searchBooksAPI/?q=' + data);
+  }
+
 }
+

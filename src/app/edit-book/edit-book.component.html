@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2"></div>
+        <div class="col col-12 col-sm-8">
+            <br><br><br>
+            <h1 class="text-center">Search Book</h1>
+            <br><br>
+            <form (ngSubmit)=onSubmit(f) #f="ngForm">
+                <table class="table table-borderless">
+                    <tr>
+                        <td><h4 class="text-left">Book Title:</h4></td>
+                        <td><input type="text" class="form-control" name="stitle" ngModel></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-info" type="submit" ngSubmit>SEARCH</button></td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+        <div class="col col-12 col-sm-2"></div>
+    </div>
+</div>
+
+<p *ngIf="!status else display"></p>
+<ng-template #display>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col col-12 col-sm-2"></div>
+        <div class="col col-12 col-sm-8">
+            <br><br>
+            <h1 class="text-center">Search Results</h1>
+            <br><br>
+            <table class="table table-borderless">
+                <thead class="table-dark"> <!--bg-primary, success, warning, danger, info-->
+                  <tr>
+                      <th>Title:</th>
+                      <th>Author:</th>
+                      <th>Publisher:</th>
+                      <th>Year:</th>
+                      <th>Image:</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let data of book">
+                    <td><input type="text" style='width:100%' name="Title" [(ngModel)]=data.Title></td>
+                    <td><input type="text" style='width:100%' name="Author" [(ngModel)]=data.Author></td>
+                    <td><input type="text" style='width:100%' name="Publisher" [(ngModel)]=data.Publisher></td>
+                    <td><input type="text" style='width:100%' name="Year" [(ngModel)]=data.Year></td>
+                    <td><input type="text" style='width:100%' name="src" [(ngModel)]=data.src></td>
+                  </tr>
+                  <tr>
+                    <td><button class="btn btn-success" (click)="edit()">UPDATE</button></td>
+                    <td><button class="btn btn-danger" (click)="delete()">DELETE</button></td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col col-12 col-sm-2"></div>
+    </div>
+</div>
+</ng-template>
+
+

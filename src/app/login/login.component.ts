@@ -2,6 +2,8 @@ import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 import {ApiService} from '../api.service';
 import {FormsModule, NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
+import { Message } from '../message.model';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
 onSubmit(data: NgForm) {
-  this.apiservice.checkLogIn(data.value).subscribe((response: {Array<>}) => {
+  this.apiservice.checkLogIn(data.value).subscribe((response: Message) => {
     if (response.message === "access"){
       this.router.navigateByUrl('books');
       localStorage.setItem('logStatus','ok');
