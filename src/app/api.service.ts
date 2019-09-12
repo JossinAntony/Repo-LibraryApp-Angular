@@ -38,5 +38,11 @@ export class ApiService {
     return this.http.get('https://libraryapp-express.herokuapp.com/searchBooksAPI/?q=' + data);
   }
 
+  updateBook(data){
+    var id = data._id;
+    return this.http.post('https://libraryapp-express.herokuapp.com/updateBooksAPI/' + id, data);
+  }
+
+
 }
 
