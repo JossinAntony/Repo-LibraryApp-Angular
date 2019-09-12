@@ -25,7 +25,12 @@ export class ViewAuthorsComponent implements OnInit {
   public fetchAuthors(){
     this.apiservice.retrieveAuthors().subscribe((response:Array<object>)=>{
       this.Authors = response;
-    })
+    });
+  }
+
+  public retrieveSingleAuthor(data_id: string) {
+    localStorage.setItem('authorId', data_id);
+    this.router.navigateByUrl('singleauthor');
   }
 
 }

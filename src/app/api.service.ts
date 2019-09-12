@@ -47,4 +47,8 @@ export class ApiService {
     return this.http.post('https://libraryapp-express.herokuapp.com/deleteBookAPI', data);
   }
 
+  retrieveAuthor(authorId) {
+    return this.http.get('https://libraryapp-express.herokuapp.com/retrieveSingleAuthorAPI/?q=' + authorId);
+  }
+
 }
