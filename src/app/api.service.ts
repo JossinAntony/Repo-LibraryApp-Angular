@@ -11,19 +11,19 @@ export class ApiService {
   // apisourcce: S:\CausalityBiomodels\ABCD\ICT\Assignments\Assignment_2\LibraryApp
 
   retrieveBooks(){
-    return this.http.get('http://libraryapp-express.herokuapp.com/retrieveBooksAPI');
+    return this.http.get('https://libraryapp-express.herokuapp.com/retrieveBooksAPI');
   }
 
   retrieveAuthors(){
-    return this.http.get('http://libraryapp-express.herokuapp.com/retrieveAuthorsAPI');
+    return this.http.get('https://libraryapp-express.herokuapp.com/retrieveAuthorsAPI');
   }
 
   saveAuthors(data){
-    return this.http.post('http://libraryapp-express.herokuapp.com/saveAuthorsAPI',data);
+    return this.http.post('https://libraryapp-express.herokuapp.com/saveAuthorsAPI',data);
   }
 
   saveBooks(data){
-    return this.http.post('http://libraryapp-express.herokuapp.com/saveBooksAPI',data);
+    return this.http.post('https://libraryapp-express.herokuapp.com/saveBooksAPI',data);
   }
 
   retrieveBook(id) {
