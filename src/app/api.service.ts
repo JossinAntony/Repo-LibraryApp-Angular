@@ -60,4 +60,7 @@ export class ApiService {
     return this.http.post('https://libraryapp-express.herokuapp.com/updateAuthorsAPI/' + id, data);
   }
 
+  deleteAuthor(data) {
+    return this.http.post('https://libraryapp-express.herokuapp.com/deleteAuthorAPI', data);
+  }
 }

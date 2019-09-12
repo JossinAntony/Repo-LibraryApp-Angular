@@ -45,14 +45,14 @@ export class EditAuthorComponent implements OnInit {
     });
   }
 
-  // delete(){
-  //   this.apiservice.deleteBook(this.book[0]).subscribe((response: Message) => {
-  //     if (response.message === "delete ok") {
-  //       alert('Book deletedd !');
-  //     }else {
-  //       alert('delete unsuccessful, please try again!');
-  //     }
-  //   });
-  // }
-
+  delete(){
+    this.apiservice.deleteAuthor(this.author[0]).subscribe((response: Message) => {
+      if (response.message === "delete ok") {
+        alert('Author deleted !');
+        this.router.navigateByUrl('viewAuthors');
+      }else {
+        alert('delete unsuccessful, please try again!');
+      }
+    });
+  }
 }
